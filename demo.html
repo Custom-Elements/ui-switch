@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>ui-switch</title>
+    <script src="http://localhost:35729/livereload.js"></script>
+    <script src="node_modules/polymer/platform.js"></script>
+    <link rel="import" href="node_modules/polymer/polymer.html">
+    <link rel="import" href="src/ui-switch.html">
+    <style>
+      body {
+        font-family: "Helvetica Neue", "Helvetica", Arial;
+      }
+      #big {
+        font-size: 32px;
+      }
+      section {
+        margin: 1em;
+      }
+    </style>
+  </head>
+  <body unresolved>
+    <section>
+      <ui-switch>
+        Good Times!
+      </ui-switch>
+    </section>
+    <section>
+      <ui-switch id="big" checked="true">
+        Big Times!
+      </ui-switch>
+    </section>
+    <script>
+      document.addEventListener('polymer-ready', function() {
+        //poke your element here
+      })
+    </script>
+  </body>
+</html>

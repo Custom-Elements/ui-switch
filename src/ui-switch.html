@@ -1,0 +1,15 @@
+<polymer-element name="ui-switch" attributes="checked" on-click="{{onContentClick}}">
+<template>
+  <section on-click="{{onSwitchClick}}">
+    <link rel="stylesheet" type="text/css" href="./ui-switch.less">
+    <input type="checkbox" id="check" on-change="{{onChange}}" on-focus="{{onFocus}}" on-blur="{{onBlur}}">
+    <label id="checklabel" for="check" horizontal layout center>
+      <section id="switch">
+        <span id="switchhandle"></span>
+      </section>
+      <content></content>
+    </label>
+</section>
+</template>
+<script src="./ui-switch.litcoffee"></script>
+</polymer-element>
