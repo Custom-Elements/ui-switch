@@ -12,7 +12,7 @@
     width: 2.5em;
     height: 1em;
     background-color: @hairline-grey;
-    background-image: linear-gradient(rgba(0,0,0,0.01), rgba(0,0,0,0.02));
+    .flat;
     .border;
     margin-right: 0.5em;
     padding: 0.2em;
@@ -21,14 +21,20 @@
   #switchhandle {
     box-sizing: border-box;
     display: inline-block;
-    background-image: linear-gradient(rgba(0,0,0,0.01), rgba(0,0,0,0.02));
+    .dark-tint;
     .border;
     width: 1em;
     height: 1em;
     .transition(@input-transition);
     margin-left: 0;
-    background-color: @white;
-    background-color: @hairline-grey;
+  }
+  #check[checked] ~ #checklabel {
+    #switch {
+      background-color: @green;
+    }
+    #switchhandle {
+      margin-left: 1.5em;
+    }
   }
   //hide it this way so that we can still get keytab focus
   input {
@@ -37,14 +43,6 @@
   }
 }
 
-:host([on]) {
-  #switchhandle {
-    margin-left: 1.5em;
-  }
-  #switch {
-    background-color: @green;
-  }
-}
 
 :host([focused]) {
   #switch {

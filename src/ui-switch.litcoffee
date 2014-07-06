@@ -12,16 +12,11 @@ Fires when the check goes on or off.
 ###checked
 This is a nice `true` or `false` attribute to make data binding easier.
 
-      checked:
-        value: false
-        reflect: true
       checkedChanged: ->
         if @checked
           @$.check.setAttribute 'checked', ''
-          @setAttribute 'on', ''
         else
           @$.check.removeAttribute 'checked'
-          @removeAttribute 'on'
         @fire 'change'
 
 ##Methods
