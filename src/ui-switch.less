@@ -20,6 +20,13 @@
     padding: 3px;
     .transition(@transition);
   }
+  #switchrocker {
+    box-sizing: content-box;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    .transition(@transition);
+  }
   #switchhandle {
     box-sizing: border-box;
     display: inline-block;
@@ -36,6 +43,7 @@
     }
     #switchhandle {
       margin-left: 1.5em;
+      .transform(rotateY(180deg));
     }
   }
   //hide it this way so that we can still get keytab focus
