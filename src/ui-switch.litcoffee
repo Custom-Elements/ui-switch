@@ -9,14 +9,15 @@ On and off with a sliding motion.
 Fires when the check goes on or off.
 
 ##Attributes and Change Handlers
-###checked
+###value
 This is a nice `true` or `false` attribute to make data binding easier.
 
-      checkedChanged: ->
-        if @checked
+      valueChanged: ->
+        if @value
           @$.check.setAttribute 'checked', ''
         else
           @$.check.removeAttribute 'checked'
+        @setAttribute 'value', @value
         @fire 'change'
 
 ##Methods
@@ -26,7 +27,7 @@ Check and focus handling, these attributes are used as flags
 to control formatting.
 
       onChange: ->
-        @checked = @$.check.checked
+        @value = @$.check.checked
 
       onFocus: ->
         @setAttribute 'focused', ''
@@ -39,7 +40,7 @@ so that we can catch clicks on the `content` to have a large hit area. But, clic
 in the rest of the control bubble too, so we need to eat those before they bubble.
 
       onContentClick: (evt) ->
-        @checked = not @checked
+        @value = not @value
 
       onSwitchClick: (evt) ->
         evt.stopPropagation()
